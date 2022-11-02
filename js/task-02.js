@@ -10,7 +10,7 @@ const ul = document.querySelector('#ingredients');
 for (let ingridient of ingredients) {
   const li = document.createElement("li");
   li.textContent = ingridient;
-   li.classList.add("item");
+  li.classList.add("item");
   ul.appendChild(li);
   console.log(li);
 }
