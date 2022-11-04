@@ -1,5 +1,4 @@
-const list = document.querySelector(".gallery");
-console.log(list);
+
 
 const images = [
   {
@@ -16,11 +15,23 @@ const images = [
   },
 ];
 
-
+const list = document.querySelector(".gallery");
+console.log(list);
 const markup = images
-  .map((img) => `<li class="imge_gallery"><img src="${img.url}" src="${img.alt}" /></li>`)
+  .map((img) => `<li class="imge_gallery" style='display: flex;'><img width=300 src="${img.url}" src="${img.alt}" /></li>`)
   .join("");
+list.classList.add("link_gallery");
+list.style.backgroundColor = "grey";
+list.style.padding = "20px";
+list.style.flexBasis = "700px";
+list.style.display = "flex";
+list.style.flexWrap = "wrap";
+list.style.columnGap = "15px";
+list.style.rowGap = "15px";
+list.style.justifyContent = "space-evenly";
+
 list.insertAdjacentHTML("beforeend", markup);
+
 // list.insertAdjacentHTML("beforebegin", "<h2>Gallery</h2>");
 
 
