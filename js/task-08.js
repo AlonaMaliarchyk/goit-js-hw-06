@@ -1,7 +1,27 @@
 
 const form = document.querySelector(".login-form");
 
+console.log(form);
+function handleSubmit(event) {
+    event.preventDefault();
+    // const {
+    //     elements: { email, password }
+    // } = event.currentTarget;
+
+    const formValue = {
+        email: event.currentTarget.elements.email.value,
+        password: event.currentTarget.elements.password.value
+    }
+
+    if (formValue.email === "" || formValue.password === "") {
+        alert("Please fill in all the fields!");
+    } else { 
+        console.log(`Login: ${formValue.email}, Password: ${formValue.password}`);
+        event.currentTarget.reset();      
+    }
+}
 form.addEventListener("submit", handleSubmit);
+
 // Завдання 8
 // Напиши скрипт управління формою логіна.
 
