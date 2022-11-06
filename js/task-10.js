@@ -11,11 +11,7 @@ createBtn.addEventListener('click', () => {
 })
 
 destroyBtn.addEventListener('click', () => {
-  let divBoxes = document.querySelector("#boxes");
-
-  while (divBoxes.children.length > 0) { 
-    divBoxes.firstChild.remove();
-  }
+  destroyBoxes();
 })
 
 function createBoxes(amount) {
@@ -32,6 +28,14 @@ function createBoxes(amount) {
     divBoxes.appendChild(element);
     height += 10;
     width += 10;
+  }
+}
+
+function destroyBoxes() {
+  const divBoxes = document.querySelector("#boxes");
+
+  while (divBoxes.children.length > 0) { 
+    divBoxes.firstChild.remove();
   }
 }
 
