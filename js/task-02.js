@@ -7,13 +7,16 @@ const ingredients = [
   'Condiments',
 ];
 const ul = document.querySelector('#ingredients');
-for (let ingridient of ingredients) {
-  const li = document.createElement("li");
-  li.textContent = ingridient;
-  li.classList.add("item");
-  ul.appendChild(li);
-  console.log(li);
-}
+
+const items = ingredients.map((ingridient) => {
+  let item = document.createElement("li");
+  item.textContent = `${ingridient }`;
+  item.classList.add("item");
+  return item;
+});
+ul.append(...items);
+
+
 
 
 // Напиши скрипт, який для кожного елемента масиву ingredients:
